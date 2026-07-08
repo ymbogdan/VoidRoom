@@ -1,0 +1,14 @@
+settings:
+  region-name: voidroom
+  check-interval-ticks: 5
+  message-cooldown-ms: 2000
+
+regions:
+  voidroom:
+    world: world
+    minX: -100
+    minY: 0
+    minZ: -100
+    maxX: 100
+    maxY: 320
+    maxZ: 100

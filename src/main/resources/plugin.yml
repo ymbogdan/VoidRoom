@@ -1,0 +1,13 @@
+name: VoidRoom
+main: it.ymbogdan.voidroom.VoidRoomPlugin
+version: 1.0.0
+api-version: '1.20'
+authors: [ymbogdan]
+commands:
+  voidroom:
+    description: Gestione regione voidroom
+    usage: /voidroom <select|confirm|pos1|pos2|save|reload>
+    permission: voidroom.admin
+permissions:
+  voidroom.admin:
+    default: op
