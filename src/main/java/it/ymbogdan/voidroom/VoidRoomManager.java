@@ -46,6 +46,14 @@ public class VoidRoomManager {
         return regionManager.contains(regionName, location);
     }
 
+    public boolean hasConfiguredRegion() {
+        return regionManager.getRegion(regionName) != null;
+    }
+
+    public String getRegionName() {
+        return regionName;
+    }
+
     public boolean saveVoidRoom(RegionManager.Region region) {
         boolean saved = regionManager.setRegion(regionName, region);
         if (saved) {

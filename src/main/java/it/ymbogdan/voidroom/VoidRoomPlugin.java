@@ -1,5 +1,6 @@
 package it.ymbogdan.voidroom;
 
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class VoidRoomPlugin extends JavaPlugin {
@@ -22,6 +23,14 @@ public class VoidRoomPlugin extends JavaPlugin {
             getCommand("voidroom").setTabCompleter(command);
         }
         voidRoomManager.startPeriodicCheck();
+        int pluginId = 33389;
+        new Metrics(this, pluginId);
+        if (voidRoomManager.hasConfiguredRegion()) {
+            getLogger().info("Loaded region '" + voidRoomManager.getRegionName() + "'.");
+        } else {
+            getLogger().warning("No region named '" + voidRoomManager.getRegionName() + "' was found. Use /voidroom select and /voidroom save.");
+        }
+        getLogger().info("VoidRoom has been enabled.");
     }
 
     @Override
@@ -29,5 +38,6 @@ public class VoidRoomPlugin extends JavaPlugin {
         if (voidRoomManager != null) {
             voidRoomManager.stopPeriodicCheck();
         }
+        getLogger().info("VoidRoom has been disabled.");
     }
 }
